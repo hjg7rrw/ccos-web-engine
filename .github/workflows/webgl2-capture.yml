@@ -1,0 +1,42 @@
+name: CCOS WebGL2 software screenshot QA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/webgl2-capture.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  software-webgl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install Chromium software graphics and test tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb xauth libegl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: WebGL2 particle engine full software test
+        run: |
+          export CCOS_CHROMIUM_PATH="$(python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print(p.chromium.executable_path); p.stop()')"
+          echo "Running trusted first-party scripts with temporary virtual X display"
+          xvfb-run -a -s '-screen 0 1440x900x24 -nolisten tcp' python tests/webgl2_software_qa.py
+      - name: Preserve screenshots and results (including failed attempts)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ccos-webgl2-evidence
+          path: |
+            qa-webgl2/*.png
+            qa-webgl2/*.json
+          if-no-files-found: warn
+          retention-days: 30
