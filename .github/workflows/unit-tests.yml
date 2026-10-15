@@ -1,0 +1,23 @@
+name: CCOS unit and source checks
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deterministic-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: JS geometry and projection tests
+        run: node --test tests/math.test.mjs
+      - name: New-site generator regression test
+        run: python tests/test_scaffold.py
+      - name: Python source compile check
+        run: python -m compileall -q lab scripts tests
