@@ -29,7 +29,7 @@ bash run_webgl2_qa.sh
 
 GitHub-hosted tests:
 - [Deterministic source tests](https://github.com/hjg7rrw/ccos-web-engine/actions/workflows/unit-tests.yml) — actually passed October 15, 2026.
-- [WebGL2 software graphics/screenshots](https://github.com/hjg7rrw/ccos-web-engine/actions/workflows/webgl2-capture.yml) — real 4,800-point browser rendering passed in GitHub-hosted CI; original screenshots available as workflow artifacts, and new screenshots are staged in a dedicated evidence review branch where supported.
+- [WebGL2 software graphics/screenshots](https://github.com/hjg7rrw/ccos-web-engine/actions/workflows/webgl2-capture.yml) — real 4,800-point browser rendering passed in GitHub-hosted CI; original screenshots available as workflow artifacts, and four new WebGL2 PNG screenshots plus two JSON records are permanently retained on main under `qa-webgl2/hosted-ci/38770649514/` after reviewed PR #1.
 
 ## Project structure
 
@@ -61,3 +61,7 @@ The new `scripts/import_historical_release.py` was dry-run validated against the
 - Jarvis production branches and the user vault remain separate and unchanged.
 
 **No CCOS project lineage uses hash/checksum tracking.** Human-readable version labels, run dates, source IDs, Git commits for transport, and explicit learning deltas provide provenance.
+
+## Complete original release archival upload
+
+The **full original 73-file ZIP plus Git-history bundle** can be uploaded safely from a Git-authenticated computer using `scripts/import_historical_release.py`. The script is dry-run first, checks source paths and common secret patterns, then creates an isolated `ccos/full-archive-v0.1.4` review branch under `archive/v0.1.4/`, **never modifying main**. The original source ZIP must be supplied separately from the project conversation. A Windows double-click import kit was also delivered as a project artifact. Until that upload actually runs, the historic original 12 PNGs and bundle must remain marked NOT MIRRORED.
