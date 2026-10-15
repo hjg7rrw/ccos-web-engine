@@ -1,0 +1,20 @@
+# Local state / secrets
+.DS_Store
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa
+id_ed25519
+*token*.txt
+credentials.json
+secrets.json
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+playwright-report/
+test-results/
+.pytest_cache/
