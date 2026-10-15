@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   software-webgl:
@@ -30,7 +30,7 @@ jobs:
           export CCOS_CHROMIUM_PATH="$(python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); print(p.chromium.executable_path); p.stop()')"
           echo "Running trusted first-party scripts with temporary virtual X display"
           xvfb-run -a -s '-screen 0 1440x900x24 -nolisten tcp' python tests/webgl2_software_qa.py
-      - name: Preserve screenshots and results (including failed attempts)
+      - name: Upload evidence as downloadable artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -40,3 +40,19 @@ jobs:
             qa-webgl2/*.json
           if-no-files-found: warn
           retention-days: 30
+      - name: Preserve new screenshots on a non-production review branch
+        if: success()
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          BRANCH="ccos/hosted-webgl2-evidence-$RUN_ID"
+          mkdir -p "qa-webgl2/hosted-ci/$RUN_ID"
+          cp qa-webgl2/*.png qa-webgl2/*.json "qa-webgl2/hosted-ci/$RUN_ID/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$BRANCH"
+          git add "qa-webgl2/hosted-ci/$RUN_ID"
+          git commit -m "test(webgl2): preserve actual hosted software renderer evidence run $RUN_ID"
+          git push origin "HEAD:refs/heads/$BRANCH"
+          echo "Review branch: $BRANCH"
