@@ -1,0 +1,43 @@
+[
+  {
+    "viewport": "1366x768",
+    "passed": true,
+    "horizontal_overflow": false,
+    "webgl2_available": false,
+    "status": "CSS FALLBACK / WEBGL2 UNAVAILABLE",
+    "errors": []
+  },
+  {
+    "viewport": "768x1024",
+    "passed": true,
+    "horizontal_overflow": false,
+    "webgl2_available": false,
+    "status": "CSS FALLBACK / WEBGL2 UNAVAILABLE",
+    "errors": []
+  },
+  {
+    "viewport": "390x844",
+    "passed": true,
+    "horizontal_overflow": false,
+    "webgl2_available": false,
+    "status": "CSS FALLBACK / WEBGL2 UNAVAILABLE",
+    "errors": []
+  },
+  {
+    "viewport": "375x812",
+    "passed": true,
+    "horizontal_overflow": false,
+    "webgl2_available": false,
+    "status": "CSS FALLBACK / WEBGL2 UNAVAILABLE",
+    "errors": []
+  },
+  {
+    "viewport": "320x700",
+    "passed": true,
+    "horizontal_overflow": false,
+    "webgl2_available": false,
+    "status": "CSS FALLBACK / WEBGL2 UNAVAILABLE",
+    "errors": []
+  }
+]
+PASS: Layout, semantics, controls and fallback. WebGL2 rendering remains unverified.
