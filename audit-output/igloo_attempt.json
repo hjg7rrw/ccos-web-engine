@@ -1,0 +1,6 @@
+{
+  "url_requested": "https://www.igloo.inc",
+  "status": "BLOCKED_OR_UNAVAILABLE",
+  "message": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+  "note": "Do not bypass access controls or infer technical implementation from failure."
+}
