@@ -1,0 +1,82 @@
+{
+  "schema": "CCOS_WEBGL2_SUMMARY_v0.1.3",
+  "label": "OBSERVED abbreviated evidence; complete raw record is in packaged artifact",
+  "host": "Debian GNU/Linux 13 / Chromium 144.0.7559.96 / Playwright 1.57.0",
+  "modes": [
+    {
+      "mode": "headless-default",
+      "display": "none",
+      "passed": true,
+      "renderer": "ANGLE SwiftShader"
+    },
+    {
+      "mode": "headless-swiftshader",
+      "display": "none",
+      "passed": true,
+      "renderer": "ANGLE SwiftShader"
+    },
+    {
+      "mode": "headless-default",
+      "display": "Xvfb",
+      "passed": true,
+      "renderer": "ANGLE SwiftShader"
+    },
+    {
+      "mode": "headless-swiftshader",
+      "display": "Xvfb",
+      "passed": true,
+      "renderer": "ANGLE SwiftShader"
+    },
+    {
+      "mode": "headed-default",
+      "display": "Xvfb",
+      "passed": false,
+      "error": "getContext(webgl2) returned null"
+    },
+    {
+      "mode": "headed-swiftshader",
+      "display": "Xvfb",
+      "passed": true,
+      "renderer": "ANGLE SwiftShader"
+    },
+    {
+      "mode": "headed-mesa",
+      "display": "Xvfb",
+      "passed": true,
+      "renderer": "Mesa llvmpipe (LLVM 19.1.7, OpenGL 4.5)"
+    }
+  ],
+  "application": {
+    "points": 4800,
+    "viewports": [
+      {
+        "width": 1366,
+        "height": 768,
+        "pass": true,
+        "gl_error": 0,
+        "pixel_colors_distinct": 11,
+        "selected_shape": "HELIX",
+        "fps_software": 21
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "pass": true,
+        "gl_error": 0,
+        "pixel_colors_distinct": 11,
+        "selected_shape": "HELIX",
+        "fps_software": 56
+      }
+    ],
+    "node_tests": "4 passed",
+    "python_test": "1 passed",
+    "http_navigation": "UNTESTED due managed browser policy"
+  },
+  "limitations": [
+    "Software rendering only",
+    "No physical GPU performance",
+    "Windows unverified",
+    "Web module loading over HTTP unverified",
+    "No public deployment"
+  ]
+}
