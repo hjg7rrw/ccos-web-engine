@@ -1,0 +1,45 @@
+{
+  "url_requested": "http://localhost:8877",
+  "url_resolved": "http://localhost:8877",
+  "http_status": 200,
+  "html_bytes": 4876,
+  "fetch_seconds": 0.016,
+  "title": "CCOS / An Interactive World Engine",
+  "meta": [
+    {},
+    {
+      "name": "viewport",
+      "content": "width=device-width,initial-scale=1,viewport-fit=cover"
+    },
+    {
+      "name": "theme-color",
+      "content": "#08111c"
+    },
+    {
+      "name": "description",
+      "content": "An original interactive 3D laboratory for cinematic creative worlds, built as a CCOS engineering demonstrator."
+    }
+  ],
+  "script_references": [
+    {
+      "src": "./src/main.js",
+      "type": "module"
+    }
+  ],
+  "stylesheet_references": [
+    {
+      "rel": "stylesheet",
+      "href": "./src/styles.css"
+    }
+  ],
+  "image_count": 0,
+  "image_alt_missing_count": 0,
+  "anchor_count": 7,
+  "referenced_hosts": [
+    "localhost:8877"
+  ],
+  "limitations": [
+    "HTML inspection does not establish source architecture, ownership, runtime performance, licenses, or shader implementation.",
+    "A blocked request is not bypassed. Browser-visible behavior needs separate manual testing."
+  ]
+}
