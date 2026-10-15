@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#08111c" />
+  <meta name="description" content="An original interactive 3D laboratory for cinematic creative worlds, built as a CCOS engineering demonstrator." />
+  <title>CCOS / An Interactive World Engine</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div id="visual" aria-hidden="true"><canvas id="universe"></canvas></div>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="masthead">
+    <a class="wordmark" href="#origin" aria-label="CCOS home"><span class="sigil">◈</span> CCOS<span class="wordmark-end">/LAB</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#origin">Origin</a><a href="#worlds">Worlds</a><a href="#signal">Signal</a>
+    </nav>
+    <button id="quality" class="hud-btn" type="button" aria-label="Toggle performance information" aria-expanded="false">SYS: <span id="quality-label">AUTO</span></button>
+  </header>
+  <div class="left-rail" aria-hidden="true"><span>EXPERIMENT / CCE-001</span><span>INTERACTIVE WORLDS DIVISION</span></div>
+  <main id="main">
+    <section id="origin" class="chapter chapter--hero" data-world="origin" tabindex="-1" aria-label="Origin scene">
+      <div class="chapter-inner">
+        <div class="eyebrow"><i></i> LABORATORY TRANSMISSION 001 <span class="line"></span> EST. 2026</div>
+        <h1>IMAGINE<br/><em>BEYOND</em><br/>THE FRAME<span class="period">.</span></h1>
+        <p class="lead">A new dimension for original worlds. Scroll to journey through our prototype cinematic engine.</p>
+        <a class="cta" href="#worlds">Explore the system <span>↘</span></a>
+      </div>
+      <div class="chapter-index"><span>01 / 03</span><span>DESCEND TO EXPLORE</span><span class="down">↓</span></div>
+    </section>
+    <section id="worlds" class="chapter chapter--worlds" data-world="worlds" tabindex="-1" aria-label="Worlds scene">
+      <div class="chapter-inner">
+        <div class="eyebrow"><i></i> 02 / VIRTUAL ARCHIVE</div>
+        <h2>WORLDS ARE<br/><em>BUILT HERE.</em></h2>
+        <p class="lead">Select a discipline to transform the simulation. Each selection changes the live 3D geometry, not a video background.</p>
+        <div class="project-grid" role="group" aria-label="Interactive world presets">
+          <button class="world-card is-active" data-shape="sphere" aria-pressed="true"><small>001 / NARRATIVE</small><strong>Story Engine</strong><span>↗</span></button>
+          <button class="world-card" data-shape="torus" aria-pressed="false"><small>002 / GEOMETRY</small><strong>World Engine</strong><span>↗</span></button>
+          <button class="world-card" data-shape="helix" aria-pressed="false"><small>003 / SIGNAL</small><strong>Particle Engine</strong><span>↗</span></button>
+        </div>
+        <p class="detail" id="world-description" aria-live="polite">A spherical world-state of interconnected story points. Structured motion, reusable visual language, and narrative continuity.</p>
+      </div>
+      <div class="chapter-index"><span>02 / 03</span><span>SELECT A WORLD STATE</span></div>
+    </section>
+    <section id="signal" class="chapter chapter--signal" data-world="signal" tabindex="-1" aria-label="Signal scene">
+      <div class="chapter-inner">
+        <div class="eyebrow"><i></i> 03 / NEW FRONTIERS</div>
+        <h2>THE NEXT<br/><em>DIMENSION.</em></h2>
+        <p class="lead">A real-time, original WebGL environment. Engineered as reusable infrastructure for projects, worlds, and future creative experiments.</p>
+        <div class="signal-actions">
+          <button id="trigger-morph" class="cta button-cta" type="button">Reshape the signal <span>↗</span></button>
+          <a class="text-link" href="#origin">Return to origin ↑</a>
+        </div>
+        <p class="microcopy" id="render-status" role="status">INITIALIZING RENDERER...</p>
+      </div>
+      <div class="chapter-index"><span>03 / 03</span><span>CCOS WEB ENGINE / VERSION 0.1</span></div>
+    </section>
+  </main>
+  <aside id="diag" class="diagnostics" hidden aria-label="Performance statistics"><h3>ENGINE STATUS</h3><dl><div><dt>Renderer</dt><dd id="diag-renderer">—</dd></div><div><dt>Particle count</dt><dd id="diag-particles">—</dd></div><div><dt>Frame rate</dt><dd id="diag-fps">—</dd></div><div><dt>Pixel ratio</dt><dd id="diag-dpr">—</dd></div><div><dt>World state</dt><dd id="diag-shape">—</dd></div></dl><p>Optional developer diagnostics. Not a benchmark.</p></aside>
+  <footer><span>INDEPENDENT WEBGL ENGINEERING STUDY</span><span>ORIGINAL CCOS INTERACTIVE EXPERIENCE</span></footer>
+</body>
+</html>
