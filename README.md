@@ -7,10 +7,12 @@ This is the dedicated repository for the CCOS Web Engine, separate from Jarvis. 
 
 ## Transfer status
 
-The first GitHub transfer contains the already-audited WebGL2 diagnostic files from the isolated Jarvis development branch at `CCOS/webgl2-lab/v0.1.3/`. The complete v0.1.4 graphics-engine archive (including browser screenshots and additional source) is held separately, and **is not yet fully mirrored to this repository**.
+The repository now contains the **complete runnable original website engine** (`index.html`, `src/*`), its basic deterministic tests and generator, and the previously audited 12-file laboratory under `lab/v0.1.3/`. Remote inventory verifies **32 source files** at this stage. The complete v0.1.4 historical release also contains many additional documents, QA assets, and binary screenshots that have **not yet been mirrored**. GitHub's connected text-file writing interface cannot directly import the local ZIP or binary assets; that portion requires a separate authorized bulk upload route.
 
 ## Rights and QA limits
 
 All rights reserved / source **UNLICENSED** unless explicitly relicensed. Igloo Inc. supplied technical inspiration, not proprietary source or media. Software-rendering flags like `--enable-unsafe-swiftshader` are for trusted first-party local tests only. Physical GPU performance, full HTTP module loading, Windows parity, and deployment are not verified.
 
 See the lab documentation for operating scripts, failure logs, run matrices and known limitations. No Jarvis production files should be changed to use this independent repository.
+
+**Current visibility: PUBLIC**. Source is unlicensed/all rights reserved. This public upload was requested by the repository owner. Do not commit credentials, private records or unreviewed third-party IP.
